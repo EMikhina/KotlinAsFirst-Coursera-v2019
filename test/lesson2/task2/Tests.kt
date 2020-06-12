@@ -12,6 +12,7 @@ class Tests {
         assertTrue(pointInsideCircle(1.0, 1.0, 0.0, 0.0, 2.0))
         // (2, 2) NOT inside circle: center = (0, 0), r = 2
         assertFalse(pointInsideCircle(2.0, 2.0, 0.0, 0.0, 2.0))
+        assertTrue(pointInsideCircle(0.0, 2.0, 0.0, 0.0, 2.0))
     }
 
     @Test
