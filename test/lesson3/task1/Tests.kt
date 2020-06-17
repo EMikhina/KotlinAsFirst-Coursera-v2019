@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
 import kotlin.math.PI
+import kotlin.math.pow
 
 class Tests {
     @Test
@@ -71,6 +72,8 @@ class Tests {
         assertEquals(2, digitNumber(99))
         assertEquals(3, digitNumber(123))
         assertEquals(10, digitNumber(Int.MAX_VALUE))
+        assertEquals(1, digitNumber(-5))
+        assertEquals(2, digitNumber(-11))
     }
 
     @Test
@@ -86,6 +89,9 @@ class Tests {
         assertEquals(1836311903, fib(46))
         // Just to calculate it
         fib(50)
+        assertEquals(3, fib(4))
+        assertEquals(8, fib(6))
+        assertEquals(610, fib(15))
     }
 
     @Test
@@ -100,6 +106,8 @@ class Tests {
         assertEquals(2089830349, lcm(23579, 88631))
         assertEquals(2022222222, lcm(2, 1011111111))
         assertEquals(2022222222, lcm(1011111111, 2))
+        assertEquals(8, lcm(2, -8))
+        assertEquals(7, lcm(-7, -7))
     }
 
     @Test
@@ -114,6 +122,7 @@ class Tests {
         assertEquals(2124679, minDivisor(2124679))
         assertEquals(1073676287, minDivisor(1073676287))
         assertEquals(Int.MAX_VALUE, minDivisor(Int.MAX_VALUE))
+        assertEquals(601, minDivisor(1073676283))
     }
 
     @Test
@@ -128,6 +137,7 @@ class Tests {
         assertEquals(1, maxDivisor(2124679))
         assertEquals(1, maxDivisor(1073676287))
         assertEquals(1, maxDivisor(Int.MAX_VALUE))
+        assertEquals(1786483, maxDivisor(1073676283))
     }
 
     @Test
@@ -139,6 +149,13 @@ class Tests {
         assertFalse(isCoPrime(37, 111))
         assertTrue(isCoPrime(1234567890, 908765431))
         assertTrue(isCoPrime(2109876543, 1234567891))
+        assertTrue(isCoPrime(2.0.pow(20).toInt(), 3.0.pow(20).toInt()))
+        assertFalse(isCoPrime(9437184, 1162261467))
+        assertTrue(isCoPrime(1, 11))
+        assertTrue(isCoPrime(1, 4))
+        assertTrue(isCoPrime(1, 1))
+        assertTrue(isCoPrime(-25, 49))
+        assertFalse(isCoPrime(-37, 111))
     }
 
     @Test
@@ -203,6 +220,7 @@ class Tests {
         assertEquals(111, revert(111))
         assertEquals(17571, revert(17571))
         assertEquals(123456789, revert(987654321))
+        assertEquals(-123, revert(-321))
     }
 
     @Test
@@ -212,6 +230,7 @@ class Tests {
         assertFalse(isPalindrome(3653))
         assertTrue(isPalindrome(15751))
         assertTrue(isPalindrome(24688642))
+        assertTrue(isPalindrome(-123321))
     }
 
     @Test
@@ -223,6 +242,8 @@ class Tests {
         assertFalse(hasDifferentDigits(0))
         assertFalse(hasDifferentDigits(777))
         assertTrue(hasDifferentDigits(31122))
+        assertFalse(hasDifferentDigits(-22))
+        assertTrue(hasDifferentDigits(-11101))
     }
 
     @Test
