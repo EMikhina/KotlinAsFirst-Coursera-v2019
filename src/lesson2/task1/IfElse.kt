@@ -147,10 +147,10 @@ fun triangleKind(a: Double, b: Double, c: Double): Int {
     if (longestSide >= x + y) return -1
     val lSqr = sqr(longestSide)
     val sumOthSqr = sqr(x) + sqr(y)
-    when {
-        lSqr < sumOthSqr -> return 0
-        lSqr == sumOthSqr -> return 1
-        else -> return 2
+    return when {
+        lSqr < sumOthSqr -> 0
+        lSqr == sumOthSqr -> 1
+        else -> 2
     }
 }
 
@@ -166,7 +166,7 @@ fun segmentLength(a: Int, b: Int, c: Int, d: Int): Int {
     if ((b < c) || (d < a)) return -1
     return if (a <= c) {
         if (b < d) b - c else d - c
+    } else {
+        if (b < d) b - a else d - a
     }
-        else if (b < d) b - a
-        else d - a
 }

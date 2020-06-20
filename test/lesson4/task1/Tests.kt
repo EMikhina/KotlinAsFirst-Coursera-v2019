@@ -185,6 +185,7 @@ class Tests {
         assertEquals(listOf(1, 2, 1, 0), convert(100, 4))
         assertEquals(listOf(1, 3, 12), convert(250, 14))
         assertEquals(listOf(2, 14, 12), convert(1000, 19))
+        assertEquals(listOf(1, 0, 1), convert(5, 2))
     }
 
     @Test
@@ -205,6 +206,7 @@ class Tests {
         assertEquals(100, decimal(listOf(1, 2, 1, 0), 4))
         assertEquals(250, decimal(listOf(1, 3, 12), 14))
         assertEquals(1000, decimal(listOf(2, 14, 12), 19))
+        assertEquals(6, decimal(listOf(1, 1, 0), 2))
     }
 
     @Test
